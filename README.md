@@ -23,8 +23,7 @@ Desarrollo-Equipo1/
 ├── .env                              ← Plantilla de variables de entorno
 ├── package.json
 ├── next.config.ts
-├── propuesta/
-│   └── screens/                      ← Imágenes exportadas de Stitch
+├── propuesta/                        ← Imágenes exportadas de Stitch
 ├── README.md                         ← Pantallas y modelo de BD explicados
 ├── app/
 │   ├── layout.tsx                    ← Layout raíz
@@ -39,7 +38,7 @@ Desarrollo-Equipo1/
 │           └── [id_user]/route.ts    ← POST /api/tareas/
 |         
 ├── lib/
-│   ├── db.js                         ← Pool de conexión a Posgress
+|   ├── supabaseClient.ts             ← Cliente Supabase inicializado
 │   └── auth.ts                       ← Helpers JWT
 ├── models/
 │   └── user.model.ts                 ← Queries de usuarios
