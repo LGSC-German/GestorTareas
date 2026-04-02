@@ -45,6 +45,18 @@ Desarrollo-Equipo1/
 ├── proxy.ts                          ← Verificación JWT (Next.js proxy)
 └── public/                           ← Assets estáticos
 ```
+## Diseño de la app web
+#### Login | Registro
+![Login](propuesta/login.png)
+#### Tablero
+![Tablero](propuesta/tablero.png)
+#### Interfaz de crear tarea
+![Crear](propuesta/crear.png)
+#### Interfaz de actualizar tarea
+![Actualizar](propuesta/actualizar.png)
+
+Se tomara mas en cuanta el diseño de el tablero par el desarrollo de la interfaz
+
 
 ### Posible escalamiento con conexion a calendario personal
 
