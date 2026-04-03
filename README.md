@@ -41,7 +41,8 @@ Desarrollo-Equipo1/
 |   ├── supabaseClient.ts             ← Cliente Supabase inicializado
 │   └── auth.ts                       ← Helpers JWT
 ├── models/
-│   └── user.model.ts                 ← Queries de usuarios
+│   ├── user.model.ts                 ← Queries de usuarios
+│   └── task.model.ts                 ← Queries de tareas
 ├── proxy.ts                          ← Verificación JWT (Next.js proxy)
 └── public/                           ← Assets estáticos
 ```

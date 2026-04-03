@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
 
     if (!user || !(await bcrypt.compare(password, user.password))) {
       return NextResponse.json(
-        { mensaje: "Contraseña incorrecta" },
+        { mensaje: "Contraseña inválida" },
         { status: 401 }
       );
     }
