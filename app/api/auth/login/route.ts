@@ -3,7 +3,7 @@ import bcrypt from "bcrypt";
 import { crearToken } from "@/lib/auth";
 import {User, findUserByEmail} from "@/models/user.model";
 
-export async function POST(req: NextRequest) {
+export async function GET(req: NextRequest) {
   try {
     const { email, password } = await req.json();
 

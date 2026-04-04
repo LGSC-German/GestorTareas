@@ -10,9 +10,9 @@ Aplicación web para organizar tareas en columnas estilo Kanban.
 - Propuesta: Pantallas (Stitch)
 
 ## Funcionalidades
+### 1. Version 1 
 - Crear, editar y eliminar tareas
-- Arrastrar y soltar entre columnas
-- Autenticación de usuarios
+- Autenticación y creacion de usuarios
 - Persistencia en base de datos
 
 ## Estructura 
@@ -31,12 +31,18 @@ Desarrollo-Equipo1/
 │   └── api/
 │       ├─ auth/
 │       |   ├── register/route.ts     ← POST /api/auth/register
-│       |   └── login/route.ts        ← POST /api/auth/login
-│       ├─ usuarios/route.ts          ← POST /api/usuarios
+│       |   └── login/route.ts        ← GET  /api/auth/login
+│       ├─ usuarios/
+│       |  └── id/
+|       |       ├── update/route.ts  ← PUT /api/usuarios/id
+|       |       └── delete/route.ts  ← DELETE /api/usuarios/id
 │       └── tareas/
-|           ├── route.ts              ← POST /api/tareas
-│           └── [id_user]/route.ts    ← POST /api/tareas/
-|         
+|           ├── register/route.ts    ← POST /api/tareas/register
+|           ├── list/route.ts        ← GET /api/tareas/list
+│           └── id/
+|               ├── update/route.ts  ← PUT /api/tareas/id
+|               ├── delete/route.ts  ← DELETE /api/tareas/id
+|               └── route.ts         ← GET /api/tareas/id
 ├── lib/
 |   ├── supabaseClient.ts             ← Cliente Supabase inicializado
 │   └── auth.ts                       ← Helpers JWT
