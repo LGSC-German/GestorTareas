@@ -34,14 +34,14 @@ Desarrollo-Equipo1/
 │       |   └── login/route.ts        ← GET  /api/auth/login
 │       ├─ usuarios/
 │       |  └── id/
-|       |       ├── update/route.ts  ← PUT /api/usuarios/id
-|       |       └── delete/route.ts  ← DELETE /api/usuarios/id
+|       |       ├── update/route.ts  ← PUT /api/usuarios/id/update
+|       |       └── delete/route.ts  ← DELETE /api/usuarios/id/delete
 │       └── tareas/
 |           ├── register/route.ts    ← POST /api/tareas/register
 |           ├── list/route.ts        ← GET /api/tareas/list
 │           └── id/
-|               ├── update/route.ts  ← PUT /api/tareas/id
-|               ├── delete/route.ts  ← DELETE /api/tareas/id
+|               ├── update/route.ts  ← PUT /api/tareas/id/update
+|               ├── delete/route.ts  ← DELETE /api/tareas/id/delete
 |               └── route.ts         ← GET /api/tareas/id
 ├── lib/
 |   ├── supabaseClient.ts             ← Cliente Supabase inicializado

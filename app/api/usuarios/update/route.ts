@@ -1,16 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcrypt";
-import { crearToken } from "@/lib/auth";
-import { User, createUser, findUserByEmail } from "@/models/user.model";
+import { User, updateUser, findUserByEmail } from "@/models/user.model";
 
-export async function POST(req: NextRequest) {
+export async function PUT(req: NextRequest) {
   try {
-    const { nombre, email, password } = await req.json();
-    const user: User = null as any;
+    const { id, nombre, email, password } = await req.json();
 
-    if (!nombre || !email || !password) {
+    if (!nombre && !email && !password) {
       return NextResponse.json(
-        { error: "Todos los campos son requeridos" },
+        { error: "Es requerido al menos un campo" },
         { status: 400 }
       );
     }
@@ -38,18 +36,17 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Crear usuario y encriptar contraseña
+    // Actualizar usuario y encriptar contraseña
     const hashedPassword = await bcrypt.hash(password, 10);
-    await createUser({ nombre, email, password: hashedPassword });
+    await updateUser(id, { nombre, email, password: hashedPassword });
 
-    const token = crearToken(user.id, user.nombre);
     return NextResponse.json(
-      { token },
-      { status: 201 }
+      { message: "Usuario actualizado exitosamente" },
+      { status: 200 }
     );
   } catch {
     return NextResponse.json(
-      { error: "Error al crear usuario" },
+      { error: "Error al actualizar usuario" },
       { status: 500 }
     );
   }

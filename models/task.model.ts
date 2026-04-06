@@ -45,13 +45,26 @@ export async function updateTask(id: number, data: { nombre?: string; descripcio
   return tasks;
 }
 
-// Listar tareas por usuario y
+// Listar tareas por usuario y tipo
 export async function listTasks(id_usuario: number, tipo: string) {
   const { data: tasks, error } = await supabase
     .from("tareas")
     .select("*")
     .eq("id_usuario", id_usuario)
     .eq("tipo", tipo);
+
+  if (error) throw error;
+  return tasks;
+}
+
+// Eliminar tarea por id
+export async function deleteTask(id: number) {
+  const { data: tasks, error } = await supabase
+    .from("tareas")
+    .delete()
+    .eq("id", id)
+    .select()
+    .single();
 
   if (error) throw error;
   return tasks;

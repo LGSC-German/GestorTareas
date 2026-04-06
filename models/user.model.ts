@@ -41,3 +41,28 @@ export async function listUsers() {
   return users;
 }
 
+// Eliminar usuario por id
+export async function deleteUser(id: number) {
+  const { data: user, error } = await supabase
+    .from("usuarios")
+    .delete()
+    .eq("id", id)
+    .select()
+    .single();
+
+  if (error) throw error;
+  return user;
+}
+
+// Actualizar usuario por id
+export async function updateUser(id: number, data: { nombre?: string; email?: string; password?: string }) {
+  const { data: user, error } = await supabase
+    .from("usuarios")
+    .update(data)
+    .eq("id", id)
+    .select()
+    .single();
+
+  if (error) throw error;
+  return user;
+}
